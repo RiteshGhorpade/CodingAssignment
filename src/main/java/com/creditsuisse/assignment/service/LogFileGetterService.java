@@ -1,12 +1,12 @@
 package com.creditsuisse.assignment.service;
 
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ResourceUtils;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.Scanner;
 
 @Service
@@ -51,12 +51,22 @@ public class LogFileGetterService {
                 case "n": {
                     try {
                         logger.debug("Using the default classpath log file log.json");
-                        File file = ResourceUtils.getFile("classpath:log.json");
+                        ClassPathResource resource = new ClassPathResource("log.json");
+                        InputStream in = resource.getInputStream();
+                        File file = File.createTempFile("log", "json");
+                        try (OutputStream outputStream = new FileOutputStream(file)) {
+                            IOUtils.copy(in, outputStream);
+                            in.close();
+                        } catch (IOException e) {
+                            logger.error("Exception While Copying ", e);
+                        }
                         if (file.exists()) {
                             return file;
                         }
                     } catch (FileNotFoundException e) {
-                        e.printStackTrace();
+                        logger.error("Unable to find default File", e);
+                    } catch (IOException e) {
+                        logger.error("IO Exception While copying default file ", e);
                     }
                     isFilePathProvided = true;
                     break;
@@ -66,7 +76,7 @@ public class LogFileGetterService {
                     break;
             }
         }
-        logger.debug("User Entered the Following Log File"+filePath);
+        logger.debug("User Entered the Following Log File" + filePath);
         File logFile = new File(filePath);
         if (logFile.exists()) {
             return logFile;
