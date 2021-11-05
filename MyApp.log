@@ -1,0 +1,14 @@
+21:00:03.635 [main] INFO  c.c.assignment.AssignmentApplication - Starting AssignmentApplication using Java 1.8.0_312 on LAPTOP-T5FG82S5 with PID 23872 (C:\Users\Ritesh\Documents\GitHub\CodingAssignment\target\classes started by Ritesh in C:\Users\Ritesh\Documents\GitHub\CodingAssignment)
+21:00:03.635 [main] INFO  c.c.assignment.AssignmentApplication - No active profile set, falling back to default profiles: default
+21:00:08.258 [main] INFO  c.c.assignment.AssignmentApplication - Started AssignmentApplication in 5.322 seconds (JVM running for 6.194)
+21:00:10.801 [main] INFO  c.c.a.service.LogFileProcessor - Started Processing and Generating Required Events for File C:\Users\Ritesh\Documents\GitHub\CodingAssignment\target\classes\log.json
+21:00:10.910 [main] INFO  c.c.a.service.LogFileProcessor - Saved the following Event in Database SimpleEvent{id=scsmbstgrc, duration=8}
+21:00:10.918 [main] INFO  c.c.a.service.LogFileProcessor - Saved the following AppEvent in Database ApplicationEvent{id=scsmbstgra, duration=5, host='12345', type='APPLICATION_LOG'}
+21:00:10.918 [main] INFO  c.c.a.service.LogFileProcessor - Completed Processing File and Generating Required Events
+21:07:35.601 [main] INFO  c.c.assignment.AssignmentApplication - Starting AssignmentApplication using Java 1.8.0_312 on LAPTOP-T5FG82S5 with PID 23236 (C:\Users\Ritesh\Documents\GitHub\CodingAssignment\target\classes started by Ritesh in C:\Users\Ritesh\Documents\GitHub\CodingAssignment)
+21:07:35.601 [main] INFO  c.c.assignment.AssignmentApplication - No active profile set, falling back to default profiles: default
+21:07:40.024 [main] INFO  c.c.assignment.AssignmentApplication - Started AssignmentApplication in 5.03 seconds (JVM running for 5.835)
+21:07:43.300 [main] INFO  c.c.a.service.LogFileProcessor - Started Processing and Generating Required Events for File C:\Users\Ritesh\Documents\GitHub\CodingAssignment\target\classes\log.json
+21:07:43.416 [main] INFO  c.c.a.service.LogFileProcessor - Saved the following Event in Database SimpleEvent{id=scsmbstgrc, duration=8}
+21:07:43.416 [main] INFO  c.c.a.service.LogFileProcessor - Saved the following AppEvent in Database ApplicationEvent{id=scsmbstgra, duration=5, host='12345', type='APPLICATION_LOG'}
+21:07:43.416 [main] INFO  c.c.a.service.LogFileProcessor - Completed Processing File and Generating Required Events

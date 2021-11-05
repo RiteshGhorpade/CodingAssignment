@@ -1,5 +1,7 @@
 package com.creditsuisse.assignment.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
@@ -11,6 +13,7 @@ import java.util.Scanner;
 public class LogFileGetterService {
     private String logFilePath;
     private File file;
+    private final Logger logger = LoggerFactory.getLogger(LogFileGetterService.class);
 
     public File getFile() {
         if (exists()) {
@@ -47,6 +50,7 @@ public class LogFileGetterService {
                 }
                 case "n": {
                     try {
+                        logger.debug("Using the default classpath log file log.json");
                         File file = ResourceUtils.getFile("classpath:log.json");
                         if (file.exists()) {
                             return file;
@@ -62,6 +66,7 @@ public class LogFileGetterService {
                     break;
             }
         }
+        logger.debug("User Entered the Following Log File"+filePath);
         File logFile = new File(filePath);
         if (logFile.exists()) {
             return logFile;

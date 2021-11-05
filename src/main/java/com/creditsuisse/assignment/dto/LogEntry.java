@@ -38,5 +38,17 @@ public class LogEntry {
     public String getHost() {
         return host;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("LogEntry{");
+        sb.append("id='").append(id).append('\'');
+        sb.append(", state='").append(state).append('\'');
+        sb.append(", timestamp=").append(timestamp);
+        sb.append(", type='").append(type).append('\'');
+        sb.append(", host='").append(host).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }
 
