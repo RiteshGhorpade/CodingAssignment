@@ -31,14 +31,14 @@ public class LogFileProcessor {
     @Autowired
     private SimpleEventRepository simpleEventRepository;
 
-    public void generateEvents(File file) {
+    public void generateEvents(File file) throws IOException {
         logger.info("Started Processing and Generating Required Events for File "+file.getAbsoluteFile().getAbsolutePath());
         processFile(file);
         processEvents();
         logger.info("Completed Processing File and Generating Required Events");
     }
 
-    private void processFile(File file) {
+    private void processFile(File file) throws IOException {
         Gson gson = new Gson();
         try (BufferedReader fileBufferReader = new BufferedReader(new FileReader(file))) {
             String line;
@@ -54,10 +54,10 @@ public class LogFileProcessor {
             }
         } catch (FileNotFoundException e) {
             logger.error("Not able to find the File",e);
-            e.printStackTrace();
+            throw e;
         } catch (IOException e) {
             logger.error("IO exception",e);
-            e.printStackTrace();
+            throw e;
         }
     }
 
