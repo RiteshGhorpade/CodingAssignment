@@ -12,7 +12,7 @@
     command prompt
     and then use the following command to run the jar. 
     ```
-    java -cp assignment-0.0.1-SNAPSHOT.jar
+    java -jar assignment-0.0.1-SNAPSHOT.jar
     ```
 3. If You don't want to specify the File Press N upon prompt or Specify the Proper File
      Path by Pressing Y.
